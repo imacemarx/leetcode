@@ -17,14 +17,20 @@ class Solution {
     function isAnagram($s, $t) {
         if(strlen($s) != strlen($t))
             return false;
-        $s_count = [];
-        $t_count = [];
-        for ($i = 0; $i < strlen($s); $i++) {
-            $s_count[$s[$i]]++;
-        }
-        for ($i = 0; $i < strlen($t); $i++) {
-            $t_count[$t[$i]]++;
-        }
+        //version 1
+        // $s_count = [];
+        // $t_count = [];
+        // for ($i = 0; $i < strlen($s); $i++) {
+        //     $s_count[$s[$i]]++;
+        // }
+        // for ($i = 0; $i < strlen($t); $i++) {
+        //     $t_count[$t[$i]]++;
+        // }
+        // return $s_count == $t_count;
+        
+        //version 2
+        $s_count = count_chars($s);
+        $t_count = count_chars($t);
         return $s_count == $t_count;
     }
 }
